@@ -3,6 +3,8 @@
 I use a PIC 16F628A microprocessor to control Twisted Pear Audio DACs
 that use ESS Sabre sigma delta DAC chips. 
 
+Twisted Pear Audio: http://www.twistedpearaudio.com
+
 I have built three of the controllers for used with Twisted Pear Audio's:
 Buffalo 32 (ES9018)
 Buffalo II (ES9018)
