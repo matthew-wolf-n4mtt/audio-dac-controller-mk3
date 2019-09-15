@@ -1,0 +1,40 @@
+15-SEP-2019 Matthew J. Wolf Email: matthew.wolf at speciosus.net
+
+I use a PIC 16F628A microprocessor to control Twisted Pear Audio DACs
+that use ESS Sabre sigma delta DAC chips. 
+
+I have built three of the controllers for used with Twisted Pear Audio's:
+Buffalo 32 (ES9018)
+Buffalo II (ES9018)
+Buffalo IIIse PRO (ES9038) 
+
+The firmware version number does not match the hardware version.
+
+The firmware is written in assembly language.
+
+The controller interfaces with the Cirrus Logic CS8416 that is on a
+Twisted Pear Audio i2s mux. The controller also provides control of  
+the bypass line of a ASRC. 
+
+The controller contains a i2s input switch. The switch is used to switch
+between a USB i2s interface and the CS8416. The CS8416 is AES3 and S/PDIF
+receiver with i2s output.
+
+The input to the CS8416 is done via a Maxim MAX4619 multiplexer.
+
+The controller provides uses momentary pull-up buttons: power, ASRC bypass,
+input selection.  
+
+The AC line power state of the DAC is controller via solid state relay.  
+
+There are four leds. One led is used for the power state. There are two leds
+to display the selected input. The four inputs of the CS8416 are displayed 
+by a dual color led.  When the raw i2s, USB i2s, a blue led is lit. 
+The fourth led is used for the ASRC bypass state.  
+
+The functions of the controller can be accessed via RS232. The microprocessor's
+UART is enabled. See the schematic diagram for the serial commands.    
+
+The power state, selected input, and ASRC bypass state are saved to the 
+microprocessor's eeprom memory. This items are restored when the  
+
